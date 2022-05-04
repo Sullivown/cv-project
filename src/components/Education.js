@@ -27,7 +27,7 @@ class Education extends Component {
 	handleChange = (event) => {
 		const newArr = [...this.state.items];
 		const index = newArr.findIndex(
-			(item) => item.id === event.target.parentNode.dataset.id
+			(item) => item.id === event.target.closest('form').dataset.id
 		);
 		const item = newArr[index];
 		item[event.target.name] = event.target.value;
