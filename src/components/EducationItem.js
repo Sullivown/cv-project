@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 
 class EducationItem extends Component {
+	formatDate = (date) => {
+		const d = new Date(date);
+		return `${d.getDate()}-${d.getMonth() + 1}-${d.getFullYear()}`;
+	};
+
 	render() {
 		const { editable, handleClick, handleChange } = this.props;
 		const { id, orgName, courseName, startDate, endDate } = this.props.data;
@@ -57,7 +62,7 @@ class EducationItem extends Component {
 								value={startDate}
 							/>
 						) : startDate ? (
-							startDate
+							this.formatDate(startDate)
 						) : (
 							'?'
 						)}
@@ -73,7 +78,7 @@ class EducationItem extends Component {
 								value={endDate}
 							/>
 						) : endDate ? (
-							endDate
+							this.formatDate(endDate)
 						) : (
 							'?'
 						)}
