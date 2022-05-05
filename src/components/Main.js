@@ -37,6 +37,15 @@ class Main extends Component {
 	};
 
 	handleClick(event) {
+		if (event.target.id === 'addNewEducationItem') {
+			const newArr = [...this.state.education];
+			const item = EducationItemFactory();
+			newArr.push(item);
+			this.setState({
+				education: newArr,
+			});
+		}
+
 		if (event.target.id === 'addNewWorkHistoryItem') {
 			const newArr = [...this.state.work];
 			const item = WorkHistoryItemFactory();

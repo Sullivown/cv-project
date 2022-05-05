@@ -8,8 +8,6 @@ class WorkHistory extends Component {
 		this.state = {
 			editable: true,
 		};
-
-		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
 	handleSubmit = (event) => {
