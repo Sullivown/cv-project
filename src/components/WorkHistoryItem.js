@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import formatDate from '../helpers/formatDate';
 
-class EducationItem extends Component {
+class WorkHistoryItem extends Component {
 	render() {
 		const { editable, handleClick, handleChange } = this.props;
-		const { id, orgName, courseName, startDate, endDate } = this.props.data;
+		const { id, orgName, jobTitle, jobDescription, startDate, endDate } =
+			this.props.data;
 
 		return (
 			<div>
 				<form data-id={id}>
 					<div className='form-input-section'>
-						<label htmlFor='orgName'>
-							Place of Study / Organisation
-						</label>
+						<label htmlFor='orgName'>Company / Organisation</label>
 						{editable ? (
 							<input
 								id='orgName'
 								type='text'
 								name='orgName'
-								placeholder='Place of Study / Organisation'
+								placeholder='Company / Organisation'
 								onChange={handleChange}
 								value={orgName}
 							/>
@@ -29,20 +28,35 @@ class EducationItem extends Component {
 						)}
 					</div>
 					<div className='form-input-section'>
-						<label htmlFor='courseName'>
-							Course / Qualification
-						</label>
+						<label htmlFor='jobTitle'>Job Title</label>
 						{editable ? (
 							<input
-								id='courseName'
+								id='jobTitle'
 								type='text'
-								name='courseName'
-								placeholder='Course / Qualification'
+								name='jobTitle'
+								placeholder='Job Title'
 								onChange={handleChange}
-								value={courseName}
+								value={jobTitle}
 							/>
-						) : courseName ? (
-							courseName
+						) : jobTitle ? (
+							jobTitle
+						) : (
+							'?'
+						)}
+					</div>
+					<div className='form-input-section'>
+						<label htmlFor='jobDescription'>Job Decription</label>
+						{editable ? (
+							<input
+								id='jobDescription'
+								type='textarea'
+								name='jobDescription'
+								placeholder='Job Description'
+								onChange={handleChange}
+								value={jobDescription}
+							/>
+						) : jobDescription ? (
+							jobDescription
 						) : (
 							'?'
 						)}
@@ -95,4 +109,4 @@ class EducationItem extends Component {
 	}
 }
 
-export default EducationItem;
+export default WorkHistoryItem;

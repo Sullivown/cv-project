@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 import EducationItem from './EducationItem';
-import uniqid from 'uniqid';
+import EducationItemFactory from '../factories/EducationItemFactory';
 
 class Education extends Component {
 	constructor() {
 		super();
+		// Default data for testing
+		const defaultData = EducationItemFactory({
+			orgName: 'University of Hull',
+			courseName: 'Maths BSc',
+			startDate: '2000-01-02',
+			endDate: '2005-04-12',
+		});
 
 		this.state = {
 			editable: true,
-			items: [
-				{
-					id: '1',
-					orgName: 'University of Hull',
-					courseName: 'Maths BSc',
-					startDate: '2000-01-02',
-					endDate: '2005-04-12',
-				},
-			],
+			items: [defaultData],
 		};
 
 		this.handleChange = this.handleChange.bind(this);
@@ -40,13 +39,8 @@ class Education extends Component {
 	handleClick(event) {
 		if (event.target.id === 'addNewEducationItem') {
 			const newArr = [...this.state.items];
-			newArr.push({
-				id: uniqid(),
-				orgName: '',
-				courseName: '',
-				startDate: '',
-				endDate: '',
-			});
+			const item = EducationItemFactory();
+			newArr.push(item);
 			this.setState({
 				items: newArr,
 			});
