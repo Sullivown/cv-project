@@ -33,7 +33,7 @@ class WorkHistory extends Component {
 		});
 
 		return (
-			<div>
+			<div className='section' data-source='work'>
 				<div className='form-header'>
 					<h2>Work History</h2>
 					<button type='button' onClick={this.handleSubmit}>
@@ -44,7 +44,7 @@ class WorkHistory extends Component {
 				{editable ? (
 					<button
 						type='button'
-						id='addNewWorkHistoryItem'
+						data-command='addNew'
 						onClick={this.props.handleClick}
 					>
 						Add New Work History Item

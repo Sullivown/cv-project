@@ -33,7 +33,7 @@ class Education extends Component {
 		});
 
 		return (
-			<div>
+			<div className='section' data-source='education'>
 				<div className='form-header'>
 					<h2>Education</h2>
 					<button type='button' onClick={this.handleSubmit}>
@@ -44,7 +44,7 @@ class Education extends Component {
 				{editable ? (
 					<button
 						type='button'
-						id='addNewEducationItem'
+						data-command='addNew'
 						onClick={this.props.handleClick}
 					>
 						Add New Education Item

@@ -37,26 +37,21 @@ class Main extends Component {
 	};
 
 	handleClick(event) {
-		if (event.target.id === 'addNewEducationItem') {
-			const newArr = [...this.state.education];
-			const item = EducationItemFactory();
-			newArr.push(item);
-			this.setState({
-				education: newArr,
-			});
-		}
+		const source = event.target.closest('.section').dataset.source;
 
-		if (event.target.id === 'addNewWorkHistoryItem') {
-			const newArr = [...this.state.work];
-			const item = WorkHistoryItemFactory();
+		if (event.target.dataset.command === 'addNew') {
+			const newArr = [...this.state[source]];
+			const item =
+				source === 'education'
+					? EducationItemFactory()
+					: WorkHistoryItemFactory();
 			newArr.push(item);
 			this.setState({
-				work: newArr,
+				[source]: newArr,
 			});
 		}
 
 		if (event.target.dataset.command === 'delete') {
-			const source = event.target.closest('form').dataset.source;
 			this.deleteEntry(event.target.dataset.id, source);
 		}
 	}
