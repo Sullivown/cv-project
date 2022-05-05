@@ -12,7 +12,7 @@ class Main extends Component {
 		super();
 
 		this.state = {
-			personal: [],
+			personal: { firstName: '', lastName: '', email: '', phone: '' },
 			education: [],
 			work: [],
 		};
@@ -23,17 +23,26 @@ class Main extends Component {
 	}
 
 	handleChange = (event) => {
-		const source = event.target.closest('form').dataset.source;
-		const newArr = [...this.state[source]];
-		const index = newArr.findIndex(
-			(item) => item.id === event.target.closest('form').dataset.id
-		);
-		const item = newArr[index];
-		item[event.target.name] = event.target.value;
-		newArr.splice(index, 1, item);
-		this.setState({
-			items: newArr,
-		});
+		const source = event.target.closest('.section').dataset.source;
+		console.log(source);
+		if (source === 'personal') {
+			const newObj = { ...this.state.personal };
+			newObj[event.target.name] = event.target.value;
+			this.setState({
+				personal: newObj,
+			});
+		} else {
+			const newArr = [...this.state[source]];
+			const index = newArr.findIndex(
+				(item) => item.id === event.target.closest('form').dataset.id
+			);
+			const item = newArr[index];
+			item[event.target.name] = event.target.value;
+			newArr.splice(index, 1, item);
+			this.setState({
+				items: newArr,
+			});
+		}
 	};
 
 	handleClick(event) {
@@ -86,7 +95,7 @@ class Main extends Component {
 					/>
 				</div>
 				<div>
-					<Output />
+					<Output data={this.state} />
 				</div>
 			</main>
 		);

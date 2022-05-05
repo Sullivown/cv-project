@@ -8,7 +8,7 @@ class EducationItem extends Component {
 
 		return (
 			<div>
-				<form data-id={id} data-source='education'>
+				<form data-id={id}>
 					<div className='form-input-section'>
 						<label htmlFor='orgName'>
 							Place of Study / Organisation

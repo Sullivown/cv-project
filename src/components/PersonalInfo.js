@@ -7,23 +7,12 @@ class PersonalInfo extends Component {
 
 		this.state = {
 			editable: true,
-			firstName: '',
-			lastName: '',
-			email: '',
-			phone: '',
 		};
-
-		this.handleChange = this.handleChange.bind(this);
 	}
-
-	handleChange = (event) => {
-		this.setState({ [event.target.name]: event.target.value });
-	};
-
 	handleSubmit = (event) => {
 		event.preventDefault();
 		this.setState({
-			editable: !this.state.editable,
+			editable: !this.props.editable,
 		});
 	};
 
@@ -31,7 +20,7 @@ class PersonalInfo extends Component {
 		const { editable } = this.state;
 
 		return (
-			<div>
+			<div className='section' data-source='personal'>
 				<form onSubmit={this.handleSubmit}>
 					<div className='form-header'>
 						<h2>Personal Information</h2>
@@ -47,11 +36,11 @@ class PersonalInfo extends Component {
 								type='text'
 								name='firstName'
 								placeholder='First Name'
-								onChange={this.handleChange}
-								value={this.state.firstName}
+								onChange={this.props.handleChange}
+								value={this.props.firstName}
 							/>
-						) : this.state.firstName ? (
-							this.state.firstName
+						) : this.props.firstName ? (
+							this.props.firstName
 						) : (
 							'?'
 						)}
@@ -64,11 +53,11 @@ class PersonalInfo extends Component {
 								type='text'
 								name='lastName'
 								placeholder='Last Name'
-								onChange={this.handleChange}
-								value={this.state.lastName}
+								onChange={this.props.handleChange}
+								value={this.props.lastName}
 							/>
-						) : this.state.lastName ? (
-							this.state.lastName
+						) : this.props.lastName ? (
+							this.props.lastName
 						) : (
 							'?'
 						)}
@@ -82,10 +71,10 @@ class PersonalInfo extends Component {
 								name='email'
 								placeholder='Email'
 								onChange={this.handleChange}
-								value={this.state.email}
+								value={this.props.email}
 							/>
-						) : this.state.email ? (
-							this.state.email
+						) : this.props.email ? (
+							this.props.email
 						) : (
 							'?'
 						)}
@@ -99,10 +88,10 @@ class PersonalInfo extends Component {
 								name='phone'
 								placeholder='Phone'
 								onChange={this.handleChange}
-								value={this.state.phone}
+								value={this.props.phone}
 							/>
-						) : this.state.phone ? (
-							this.state.phone
+						) : this.props.phone ? (
+							this.props.phone
 						) : (
 							'?'
 						)}

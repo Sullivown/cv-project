@@ -2,9 +2,13 @@ import React, { Component } from 'react';
 
 class Output extends Component {
 	render() {
+		const { personal, education, work } = this.props.data;
+
 		return (
-			<div>
-				<p>This is the output!</p>
+			<div id='output'>
+				<section>
+					{personal.FirstName} {personal.lastName}
+				</section>
 			</div>
 		);
 	}

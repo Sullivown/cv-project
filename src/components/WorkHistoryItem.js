@@ -9,7 +9,7 @@ class WorkHistoryItem extends Component {
 
 		return (
 			<div>
-				<form data-id={id} data-source='work'>
+				<form data-id={id}>
 					<div className='form-input-section'>
 						<label htmlFor='orgName'>Company / Organisation</label>
 						{editable ? (
