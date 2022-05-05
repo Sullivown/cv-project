@@ -7,7 +7,6 @@ function WorkHistoryItemFactory(obj) {
 	const jobDescription = obj ? obj.jobDescription : '';
 	const startDate = obj ? obj.startDate : '';
 	const endDate = obj ? obj.endDate : '';
-	const current = obj ? obj.current : false;
 
 	return {
 		id,
@@ -16,7 +15,6 @@ function WorkHistoryItemFactory(obj) {
 		jobDescription,
 		startDate,
 		endDate,
-		current,
 	};
 }
 

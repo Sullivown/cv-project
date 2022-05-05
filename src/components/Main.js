@@ -77,7 +77,7 @@ class Main extends Component {
 	render() {
 		return (
 			<main>
-				<div>
+				<div id='leftDiv'>
 					<PersonalInfo
 						data={this.state.personal}
 						handleChange={this.handleChange}
@@ -94,7 +94,7 @@ class Main extends Component {
 						handleClick={this.handleClick}
 					/>
 				</div>
-				<div>
+				<div id='rightDiv'>
 					<Output data={this.state} />
 				</div>
 			</main>

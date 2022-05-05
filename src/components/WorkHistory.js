@@ -43,6 +43,7 @@ class WorkHistory extends Component {
 				<div id='workHistoryDiv'> {workHistoryItemsArray} </div>
 				{editable ? (
 					<button
+						className='addNew'
 						type='button'
 						data-command='addNew'
 						onClick={this.props.handleClick}

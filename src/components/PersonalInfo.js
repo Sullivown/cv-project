@@ -12,7 +12,7 @@ class PersonalInfo extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		this.setState({
-			editable: !this.props.editable,
+			editable: !this.state.editable,
 		});
 	};
 
@@ -21,13 +21,13 @@ class PersonalInfo extends Component {
 
 		return (
 			<div className='section' data-source='personal'>
-				<form onSubmit={this.handleSubmit}>
-					<div className='form-header'>
-						<h2>Personal Information</h2>
-						<button type='button' onClick={this.handleSubmit}>
-							{editable ? 'Save Section' : 'Edit Section'}
-						</button>
-					</div>
+				<div className='form-header'>
+					<h2>Personal Information</h2>
+					<button type='button' onClick={this.handleSubmit}>
+						{editable ? 'Save Section' : 'Edit Section'}
+					</button>
+				</div>
+				<form className='personal-form' onSubmit={this.handleSubmit}>
 					<div className='form-input-section'>
 						<label htmlFor='firstName'>First Name</label>
 						{editable ? (
@@ -70,7 +70,7 @@ class PersonalInfo extends Component {
 								type='text'
 								name='email'
 								placeholder='Email'
-								onChange={this.handleChange}
+								onChange={this.props.handleChange}
 								value={this.props.email}
 							/>
 						) : this.props.email ? (
@@ -87,7 +87,7 @@ class PersonalInfo extends Component {
 								type='text'
 								name='phone'
 								placeholder='Phone'
-								onChange={this.handleChange}
+								onChange={this.props.handleChange}
 								value={this.props.phone}
 							/>
 						) : this.props.phone ? (

@@ -95,6 +95,7 @@ class WorkHistoryItem extends Component {
 					</div>
 					{editable ? (
 						<button
+							className='delete'
 							type='button'
 							data-command='delete'
 							data-id={id}

@@ -43,6 +43,7 @@ class Education extends Component {
 				<div id='educationDiv'> {educationItemsArray} </div>
 				{editable ? (
 					<button
+						className='addNew'
 						type='button'
 						data-command='addNew'
 						onClick={this.props.handleClick}
