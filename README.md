@@ -2,7 +2,7 @@
 
 CV creator app. Created as part of [The Odin Project](https://www.theodinproject.com/) course.
 
-[View it live here.](https://sullivown.github.io/cv-project/])
+[View it live here.](https://sullivown.github.io/cv-project/)
 
 ## How to use
 
