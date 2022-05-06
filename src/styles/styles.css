@@ -2,12 +2,14 @@
 	margin: 0px;
 }
 
-body {
+#app {
 	box-sizing: border-box;
-	width: 100vw;
+	display: flex;
+	flex-direction: column;
 	height: 100vh;
 	margin: 0px;
 	font-family: sans-serif;
+	justify-content: stretch;
 }
 
 header {
@@ -20,10 +22,12 @@ main {
 	flex-direction: row;
 	flex-wrap: wrap;
 	gap: 25px;
+	flex: 1;
 }
 
 main > div {
 	flex: 1;
+	min-width: 500px;
 }
 
 footer {
