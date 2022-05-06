@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
+import formatDate from '../helpers/formatDate';
 
 class CvWorkHistoryItem extends Component {
 	render() {
 		const { orgName, jobTitle, jobDescription, startDate, endDate } =
 			this.props.data;
 		return (
-			<div>
-				<div>
-					<span>{jobTitle}</span>{' '}
-					<span>
-						{startDate} {endDate}
+			<div className='cv-item'>
+				<div className='space-between'>
+					<span className='bold'>{jobTitle}</span>{' '}
+					<span className='dates'>
+						{formatDate(startDate)} - {formatDate(endDate)}
 					</span>
 				</div>
-				<div>{orgName}</div>
+				<div className='italic'>{orgName}</div>
 				<div>{jobDescription}</div>
 			</div>
 		);

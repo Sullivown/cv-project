@@ -45,13 +45,13 @@ class WorkHistoryItem extends Component {
 						)}
 					</div>
 					<div className='form-input-section'>
-						<label htmlFor='jobDescription'>Job Decription</label>
+						<label htmlFor='jobDescription'>Job Description</label>
 						{editable ? (
-							<input
+							<textarea
 								id='jobDescription'
-								type='textarea'
 								name='jobDescription'
 								placeholder='Job Description'
+								rows='10'
 								onChange={handleChange}
 								value={jobDescription}
 							/>

@@ -6,6 +6,7 @@
 	align-items: center;
 	padding-top: 15px;
 	gap: 10px;
+	color: black;
 }
 
 .page {
@@ -18,8 +19,15 @@
 }
 
 .personal {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	justify-content: center;
 	padding: 15px;
 	text-align: center;
+	background-color: #2a9d8f;
+	color: white;
 }
 
 .education {
@@ -32,9 +40,36 @@
 	padding: 15px;
 }
 
+.cv-heading {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin: 5px;
+}
+
+.cv-item {
+	margin-top: 10px;
+}
+
+.space-between {
+	display: flex;
+	justify-content: space-between;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.bold {
+	font-weight: bold;
+}
+
 .controls {
 	padding: 15px;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
+}
+
+hr {
+	border: 1px solid #2a9d8f;
 }

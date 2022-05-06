@@ -26,15 +26,22 @@ label {
 	font-size: inherit;
 }
 
-input {
+input,
+textarea {
 	font-size: inherit;
+	font-family: inherit;
 	padding: 5px;
+	border: 1px solid #2a9d8f;
+	border-radius: 5px;
 }
 
 button {
 	padding: 10px;
-	border: 1px solid black;
+	border: 1px solid #2a9d8f;
 	border-radius: 5px;
+	background-color: #2a9d8f;
+	color: white;
+	font-size: 1rem;
 }
 
 button:hover {

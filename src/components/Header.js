@@ -4,7 +4,7 @@ class Header extends Component {
 	render() {
 		return (
 			<header>
-				<h1>C.V. Creator</h1>
+				<h1>CV-o-Matic</h1>
 			</header>
 		);
 	}

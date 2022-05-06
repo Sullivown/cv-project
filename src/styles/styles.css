@@ -10,11 +10,13 @@
 	margin: 0px;
 	font-family: sans-serif;
 	justify-content: stretch;
+	color: #279083;
 }
 
 header {
-	background-color: black;
+	background-color: #2a9d8f;
 	color: white;
+	padding: 15px;
 }
 
 main {
@@ -23,6 +25,7 @@ main {
 	flex-wrap: wrap;
 	gap: 25px;
 	flex: 1;
+	margin: 15px;
 }
 
 main > div {
@@ -32,12 +35,12 @@ main > div {
 
 footer {
 	margin-top: auto;
-	background-color: black;
+	background-color: #2a9d8f;
 	color: white;
 }
 
 .section {
-	border: 1px solid black;
+	border: 1px solid #2a9d8f;
 	border-radius: 15px;
 	min-width: 30%;
 	display: flex;

@@ -20,20 +20,21 @@ class Output extends Component {
 			<div id='output'>
 				<div className='page'>
 					<section className='personal'>
-						<div>
+						<div className='cv-heading'>
 							{personal.firstName || 'First Name'}{' '}
 							{personal.lastName || 'Last Name'}
 						</div>
 						<div>{personal.email || 'Email'}</div>
 						<div>{personal.phone || 'Phone'}</div>
 					</section>
-
 					<section className='education'>
-						<div>Education</div>
+						<div className='cv-heading'>Education</div>
+						<hr />
 						<div>{educationItemsArray}</div>
 					</section>
 					<section className='work'>
-						<div>Work History</div>
+						<div className='cv-heading'>Work History</div>
+						<hr />
 						<div>{workItemsArray}</div>
 					</section>
 				</div>
