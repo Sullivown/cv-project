@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React from 'react';
+=======
+import React, { forwardRef } from 'react';
+>>>>>>> e7730317b1cc9e8a4b999a91db15be33a378b100
 import CvWorkHistoryItem from './CvWorkHistoryItem';
 import CvEducationItem from './CvEducationItem';
 
