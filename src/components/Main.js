@@ -24,7 +24,6 @@ class Main extends Component {
 
 	handleChange = (event) => {
 		const source = event.target.closest('.section').dataset.source;
-		console.log(source);
 		if (source === 'personal') {
 			const newObj = { ...this.state.personal };
 			newObj[event.target.name] = event.target.value;

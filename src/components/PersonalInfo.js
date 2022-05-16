@@ -18,6 +18,7 @@ class PersonalInfo extends Component {
 
 	render() {
 		const { editable } = this.state;
+		console.log(this.props);
 
 		return (
 			<div className='section' data-source='personal'>
@@ -36,11 +37,11 @@ class PersonalInfo extends Component {
 								type='text'
 								name='firstName'
 								placeholder='First Name'
-								onChange={this.props.handleChange}
-								value={this.props.firstName}
+								onChange={this.props.data.handleChange}
+								value={this.props.data.firstName}
 							/>
-						) : this.props.firstName ? (
-							this.props.firstName
+						) : this.props.data.firstName ? (
+							this.props.data.firstName
 						) : (
 							'?'
 						)}
@@ -53,11 +54,11 @@ class PersonalInfo extends Component {
 								type='text'
 								name='lastName'
 								placeholder='Last Name'
-								onChange={this.props.handleChange}
-								value={this.props.lastName}
+								onChange={this.props.data.handleChange}
+								value={this.props.data.lastName}
 							/>
-						) : this.props.lastName ? (
-							this.props.lastName
+						) : this.props.data.lastName ? (
+							this.props.data.lastName
 						) : (
 							'?'
 						)}
@@ -70,11 +71,11 @@ class PersonalInfo extends Component {
 								type='text'
 								name='email'
 								placeholder='Email'
-								onChange={this.props.handleChange}
-								value={this.props.email}
+								onChange={this.props.data.handleChange}
+								value={this.props.data.email}
 							/>
-						) : this.props.email ? (
-							this.props.email
+						) : this.props.data.email ? (
+							this.props.data.email
 						) : (
 							'?'
 						)}
@@ -87,11 +88,11 @@ class PersonalInfo extends Component {
 								type='text'
 								name='phone'
 								placeholder='Phone'
-								onChange={this.props.handleChange}
-								value={this.props.phone}
+								onChange={this.props.data.handleChange}
+								value={this.props.data.phone}
 							/>
-						) : this.props.phone ? (
-							this.props.phone
+						) : this.props.data.phone ? (
+							this.props.data.phone
 						) : (
 							'?'
 						)}
