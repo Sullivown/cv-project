@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Footer extends Component {
-	render() {
-		return (
-			<footer>
-				<p>CV-o-Matic ©</p>
-			</footer>
-		);
-	}
+function Footer() {
+	return (
+		<footer>
+			<p>CV-o-Matic ©</p>
+		</footer>
+	);
 }
 
 export default Footer;

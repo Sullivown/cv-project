@@ -1,30 +1,25 @@
-import React, { Component } from 'react';
+import React, { useRef } from 'react';
 import CVOutput from './CVOutput';
-import ReactToPrint from 'react-to-print';
+import { useReactToPrint } from 'react-to-print';
 
 import '../styles/output.css';
 
-class Output extends Component {
-	render() {
-		return (
-			<div id='output'>
-				<div className='page'>
-					<CVOutput
-						data={this.props.data}
-						ref={(el) => (this.componentRef = el)}
-					/>
-				</div>
-				<div className='controls'>
-					<ReactToPrint
-						trigger={() => {
-							return <button>Print / Save as PDF</button>;
-						}}
-						content={() => this.componentRef}
-					/>
-				</div>
+function Output(props) {
+	const componentRef = useRef();
+	const handlePrint = useReactToPrint({
+		content: () => componentRef.current,
+	});
+
+	return (
+		<div id='output'>
+			<div className='page'>
+				<CVOutput data={props.data} ref={componentRef} />
 			</div>
-		);
-	}
+			<div className='controls'>
+				<button onClick={handlePrint}>Print / Save as PDF</button>
+			</div>
+		</div>
+	);
 }
 
 export default Output;
