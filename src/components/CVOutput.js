@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import CvWorkHistoryItem from './CvWorkHistoryItem';
 import CvEducationItem from './CvEducationItem';
 
